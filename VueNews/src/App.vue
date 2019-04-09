@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <NewsTitle/>
+    <Banner/>
   </div>
 </template>
 
 <script>
 import NewsTitle from './components/NewsTitle.vue'
+import Banner from './components/Banner.vue'
 export default {
   name: 'app',
   components: {
-  NewsTitle
+  NewsTitle,
+  Banner
   }
 }
 </script>
