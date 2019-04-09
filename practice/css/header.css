@@ -1,0 +1,82 @@
+body,html{
+	margin: 0px;
+	font-family: 微軟正黑體;
+}
+.header{
+	width: 100%;
+	background-color: #4D4D4D;
+	color: white;
+	padding: 1em 0em 1em 0em;
+}
+.container{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: row;
+}
+.logo{
+	/*width: 5vw;*/
+	height: 5vw;
+	background-image: url('../images/marvel.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+.header>.container>ul{
+	display: flex;
+	flex-direction: row;
+	margin: 0px;
+	height: 5vw;
+}
+.header>.container>ul>a{
+	color: white;
+	text-decoration:none;
+	width: calc(100%/8);
+	height: 100%;
+}
+.header>.container>ul>a:hover{
+	background-color: #3c3c3c;
+}
+.header>.container>ul>.active>li{
+	color: #FBB03B;
+}
+
+	
+
+.header>.container>ul>a>li{
+	list-style:none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search{
+	
+}
+.login{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	height: 5vw;
+	text-decoration: none;
+	color: white;
+}
+.login:hover{
+	height: 5vw;
+	text-decoration: none;
+	color: white;
+	background-color: #3c3c3c
+}
+.loginbtn{
+	width: 23px;
+	height: 23px;
+	background-color: white;
+	border-radius: 30px;
+	transform: translate(-15%,0%);
+}
+.fa-user-circle{
+	font-size: 30px;
+	color: gray;
+	transform: translate(-49%,-32%);
+}
+
