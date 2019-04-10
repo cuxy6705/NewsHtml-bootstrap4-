@@ -87,55 +87,93 @@
         <div class="mainnews">
             <div class="container">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-8 leftmain">
                         <div class="videonews">
                             <h2>影音新聞</h2>
                         </div>
                         <div class="row">
-                            <div class="newstitle">
-                                <div class="hide"></div>
+                            <div class="newstitle" v-for="(item,index) in news">
+                                <div class="hide" v-if="item.index == 1"></div>
                                 <div class="playbox">
                                     <i class="far fa-play-circle"></i>
-                                    <span class="minititle">社會</span>
+                                    <span class="minititle">{{ item.minititle }}</span>
                                 </div>
                                 <div class="time">
-                                    <h3>新聞標題</h3>
-                                    <p>2019/01/01 21:08</p>
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.time }}</p>
                                 </div>
                             </div>
-                            <div class="newstitle">
-                                <div class="playbox">
+                            <div class="newstitle newsMiniTitle" v-for="(item,index) in mininews">
+                                <div class="playbox col-5">
                                     <i class="far fa-play-circle"></i>
-                                    <span class="minititle">社會</span>
                                 </div>
-                                <div class="time">
-                                    <h3>新聞標題</h3>
-                                    <p>2019/01/01 21:08</p>
+                                <div class="time col-7">
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.time }}</p>
+                                    <p>{{ item.mininews }}</p>
+                                </div>
+                                <div class="bottomline">
+                                    <div class="hide" v-if="index == mininews.length-1"></div>
                                 </div>
                             </div>
-                            <div class="newstitle">
-                                <div class="playbox">
-                                    <i class="far fa-play-circle"></i>
-                                    <span class="minititle">社會</span>
+                        </div>
+                        <a class="checkmore" href="javescript:0;">查看更多>></a>
+                    </div>
+                    <div class="col-4">
+                        <div class="rightmenu">
+                            <div class="top10">
+                                <h2>熱門</h2>
+                                <div id="select" class="select">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" v-for="(item,index) in menu">{{ item.name }}</div>
+                                    </div>
+                                    <div class="select-prev arrow">&lt;</div>
+                                    <div class="select-next arrow">&gt;</div>
                                 </div>
-                                <div class="time">
-                                    <h3>新聞標題</h3>
-                                    <p>2019/01/01 21:08</p>
+                                <div class="rightnews">
+                                    <div v-for="(item,index) in rightnews">
+                                        <li>
+                                            <span>{{ item.index }}</span>
+                                            <P>{{ item.title }}</P>
+                                        </li>
+                                        <p>{{ item.miniti }}</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="newstitle">
-                                <div class="playbox">
-                                    <i class="far fa-play-circle"></i>
-                                    <span class="minititle">社會</span>
+                            <div class="fb">
+                                <div class="topfb">
+                                    <div class="topfbrow">
+                                        <div class="user-photo"></div>
+                                        <div>
+                                            <p>FB名稱</p>
+                                            <span>9487萬 按讚次數</span>
+                                        </div>
+                                    </div>
+                                    <span>
+                                        <i class="fab fa-facebook-square"></i>
+                                    </span>
                                 </div>
-                                <div class="time">
-                                    <h3>新聞標題</h3>
-                                    <p>2019/01/01 21:08</p>
+                                <div class="midfb">
+                                    <div class="topfbrow">
+                                        <div class="user-photo"></div>
+                                        <div>
+                                            <p class="fbName">FB名稱</p>
+                                        </div>
+                                        <span><i class="fab fa-facebook-square"></i></span>
+                                    </div>
+                                </div>
+                                <p>
+                                    簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文
+                                </p>
+                                <div class="bottomfb">
+                                    <div class="row">
+                                        <div class="col-6 fbBox"></div>
+                                        <div class="col-6 fbBox"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-4"></div>
                 </div>
             </div>
         </div>
@@ -151,27 +189,6 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
 </body>
 <script>
-    var mySwiper = new Swiper('.swiper-container', {
-        loop: true, // 循环模式选项
-
-        // 如果需要分页器
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // 如果需要前进后退按钮
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        on: {
-            slideChangeTransitionStart: function() {
-                $('.back').css('opacity', 0.5);
-                $('.swiper-slide-active').find('.back').css('opacity', 0);
-            }
-        },
-    });
-
     let data = {
         logo: 'LOGO',
         menu: [{
@@ -190,22 +207,116 @@
             name: '健康'
         }, {
             name: '旅遊'
-        }, ]
+        }, ],
+        news: [{
+            index: 1,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22'
+        }, {
+            index: 2,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22'
+        }, {
+            index: 3,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22'
+        }, {
+            index: 4,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22'
+        }],
+        mininews: [{
+            index: 1,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22',
+            mininews: '亞科新聞'
+        }, {
+            index: 2,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22',
+            mininews: '亞科新聞'
+        }, {
+            index: 3,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22',
+            mininews: '亞科新聞'
+        }, {
+            index: 4,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22',
+            mininews: '亞科新聞'
+        }, {
+            index: 5,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22',
+            mininews: '亞科新聞'
+        }, {
+            index: 6,
+            minititle: '社會',
+            title: '新聞標題',
+            time: '2019/04/01 22:22',
+            mininews: '亞科新聞'
+        }],
+        rightnews: [{
+            index: 1,
+            title: '六輕氣爆報告出爐／管線洩漏上午就發現 雲林縣長怒',
+            miniti: '亞科新聞'
+        }, {
+            index: 2,
+            title: '日本 Janpara 店家 Google Pixel 3 超特價只要新台幣14,000元',
+            miniti: '三立新聞'
+        }, {
+            index: 3,
+            title: '英若硬脫歐 聯合國盤點全球最大贏家與輸家',
+            miniti: '公視新聞'
+        }, {
+            index: 4,
+            title: '《玩很大》黑隊隊長換他！　隔4年合體小鬼…網嗨翻：《角頭》團聚',
+            miniti: '東森新聞'
+        }, {
+            index: 5,
+            title: '標普500指數終止連八漲 全球經濟和貿易摩擦又蒙陰霾',
+            miniti: '民視新聞'
+        }, {
+            index: 6,
+            title: '英若硬脫歐 聯合國盤點全球最大贏家與輸家',
+            miniti: '財經新聞'
+        }, {
+            index: 7,
+            title: '大甲媽遶彰化警察被打傷 方仰寧嗆黑道「相堵ㄟ丟！」',
+            miniti: '八七新聞'
+        }, {
+            index: 8,
+            title: '神魔之塔x《聖鬥士星矢》合作確認 與雅典娜及眾多聖鬥士並肩作戰！',
+            miniti: '想不到新聞'
+        }, {
+            index: 9,
+            title: '關於史上首張黑洞照片，這些是你需要的科普資料',
+            miniti: '高雄新聞'
+        }, {
+            index: 10,
+            title: '新聞標題',
+            miniti: '台灣新聞'
+        }]
     }
     let vm = new Vue({
         el: "#app",
         data: data,
         mounted: function() {
-
             var mySwiper = new Swiper('.swiper-container', {
-                loop: true, // 循环模式选项
-
-                // 如果需要分页器
+                loop: true,
                 pagination: {
                     el: '.swiper-pagination',
                 },
-
-                // 如果需要前进后退按钮
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -217,6 +328,19 @@
                     }
                 },
             })
+
+            var swiper2 = new Swiper('.select', {
+                width: 50,
+                spaceBetween: 0,
+                freeMode: true,
+                loop: false,
+                autoHeight: true,
+                navigation: {
+                    nextEl: '.select-next',
+                    prevEl: '.select-prev',
+                },
+            })
+
         }
     })
 </script>
