@@ -198,6 +198,20 @@ img {
   padding-left: 10px;
 }
 
+.leftmain {
+  position: relative;
+}
+
+.leftmain::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 75px;
+  background: white;
+  top: 0;
+  right: -1px;
+}
+
 .videonews {
   border-bottom: 1px solid #4d4d4d;
   margin-bottom: 30px;
@@ -217,6 +231,7 @@ img {
 .checkmore {
   color: #808080;
   float: right;
+  margin-bottom: 40px;
 }
 
 .checkmore:hover {
@@ -441,5 +456,93 @@ img {
       -ms-flex: 0 0 48%;
           flex: 0 0 48%;
   max-width: 48%;
+}
+
+.thirdVer {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.thirdVer .thirdR {
+  border-bottom: 1px solid #808080;
+}
+
+.thirdVer .thirdLeft {
+  border-right: 1px solid #4d4d4d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.thirdVer .newsMiniTitle {
+  max-width: 100%;
+  border-right: 0;
+  padding: 20px 0px 0px 0px;
+}
+
+.thirdVer .thirdRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #808080;
+}
+
+.thirdVer .thirdRight h3 {
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 60%;
+}
+
+.thirdVer .thirdRight p {
+  font-size: 12px;
+}
+
+.thirdVer .hide {
+  bottom: -1px;
+  left: -1px;
+  height: 20px;
+  width: 15px;
+  position: absolute;
+  background: white;
+}
+
+.thirdVer .checkmore {
+  margin-bottom: 0;
+}
+
+.thirdR div:nth-last-of-type(2) {
+  border: 0;
+}
+
+.Ad {
+  margin-top: 45px;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+}
+
+.Ad > .row {
+  display: block;
+  background: #595454;
+  height: 1042px;
+  margin: 10px 10px 10px 10px;
+}
+
+.Ad > .row p {
+  text-align: right;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

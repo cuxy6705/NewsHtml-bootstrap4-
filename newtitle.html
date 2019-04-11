@@ -118,6 +118,46 @@
                             </div>
                         </div>
                         <a class="checkmore" href="javescript:0;">查看更多>></a>
+                        <div class="clearfix"></div>
+                        <div class="videonews">
+                            <h2>影音新聞</h2>
+                        </div>
+                        <div class="row secendVer">
+                            <div class="newstitle" v-for="(item,index) in news">
+                                <div class="hide" v-if="item.index == 1"></div>
+                                <div class="playbox">
+                                    <span class="minititle">{{ item.minititle }}</span>
+                                </div>
+                                <div class="time">
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.time }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row thirdVer">
+                            <div class="col-6 thirdLeft">
+                                <div class="newstitle newsMiniTitle " v-for="(item,index) in mininews" v-if="index < 3">
+                                    <div class="playbox col-5">
+                                    </div>
+                                    <div class="time col-7">
+                                        <h3>{{ item.title }}</h3>
+                                        <p>{{ item.time }}</p>
+                                        <p>{{ item.mininews }}</p>
+                                    </div>
+                                    <div class="bottomline">
+                                        <div class="hide" v-if="index == mininews.length-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 thirdR">
+                                <div class="thirdRight" v-for="(item,index) in mininews">
+                                    <h3>{{ item.title }}</h3>
+                                    <p>{{ item.time }}</p>
+                                </div>
+                                <div class="hide"></div>
+                                <a class="checkmore" href="javescript:0;">查看更多>></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-4">
                         <div class="rightmenu">
@@ -141,40 +181,19 @@
                                 </div>
                             </div>
                             <div class="fb">
-                                <div class="topfb">
-                                    <div class="topfbrow">
-                                        <div class="user-photo"></div>
-                                        <div>
-                                            <p>FB名稱</p>
-                                            <span>9487萬 按讚次數</span>
-                                        </div>
-                                    </div>
-                                    <span>
-                                        <i class="fab fa-facebook-square"></i>
-                                    </span>
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/ETtodayPETS/&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden"
+                                    scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                            <div class="Ad">
+                                <div class="row">
+                                    <p>廣告</p>
                                 </div>
-                                <div class="midfb">
-                                    <div class="topfbrow">
-                                        <div class="user-photo"></div>
-                                        <div>
-                                            <p class="fbName">FB名稱</p>
-                                        </div>
-                                        <span><i class="fab fa-facebook-square"></i></span>
-                                    </div>
-                                </div>
-                                <p>
-                                    簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文 簡短內文
-                                </p>
-                                <div class="bottomfb">
-                                    <div class="row">
-                                        <div class="col-6 fbBox"></div>
-                                        <div class="col-6 fbBox"></div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -304,7 +323,7 @@
             miniti: '高雄新聞'
         }, {
             index: 10,
-            title: '新聞標題',
+            title: '慟!!!!中午不知道要吃什麼',
             miniti: '台灣新聞'
         }]
     }
