@@ -188,18 +188,29 @@
                                 <div class="row">
                                     <p>廣告</p>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="ftop">
+                        <a href="javascript:0;" v-for="(item,index) in footer">{{ item.link }}</a>
+                    </div>
+                    <span>©Arkker 2019 All Rights Reserved</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="gotoTop" @click="goTop()">aaa</div>
     </div>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
@@ -207,161 +218,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
 </body>
-<script>
-    let data = {
-        logo: 'LOGO',
-        menu: [{
-            name: '首頁'
-        }, {
-            name: '熱門'
-        }, {
-            name: '社會'
-        }, {
-            name: '娛樂'
-        }, {
-            name: '生活'
-        }, {
-            name: '國際'
-        }, {
-            name: '健康'
-        }, {
-            name: '旅遊'
-        }, ],
-        news: [{
-            index: 1,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22'
-        }, {
-            index: 2,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22'
-        }, {
-            index: 3,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22'
-        }, {
-            index: 4,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22'
-        }],
-        mininews: [{
-            index: 1,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22',
-            mininews: '亞科新聞'
-        }, {
-            index: 2,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22',
-            mininews: '亞科新聞'
-        }, {
-            index: 3,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22',
-            mininews: '亞科新聞'
-        }, {
-            index: 4,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22',
-            mininews: '亞科新聞'
-        }, {
-            index: 5,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22',
-            mininews: '亞科新聞'
-        }, {
-            index: 6,
-            minititle: '社會',
-            title: '新聞標題',
-            time: '2019/04/01 22:22',
-            mininews: '亞科新聞'
-        }],
-        rightnews: [{
-            index: 1,
-            title: '六輕氣爆報告出爐／管線洩漏上午就發現 雲林縣長怒',
-            miniti: '亞科新聞'
-        }, {
-            index: 2,
-            title: '日本 Janpara 店家 Google Pixel 3 超特價只要新台幣14,000元',
-            miniti: '三立新聞'
-        }, {
-            index: 3,
-            title: '英若硬脫歐 聯合國盤點全球最大贏家與輸家',
-            miniti: '公視新聞'
-        }, {
-            index: 4,
-            title: '《玩很大》黑隊隊長換他！　隔4年合體小鬼…網嗨翻：《角頭》團聚',
-            miniti: '東森新聞'
-        }, {
-            index: 5,
-            title: '標普500指數終止連八漲 全球經濟和貿易摩擦又蒙陰霾',
-            miniti: '民視新聞'
-        }, {
-            index: 6,
-            title: '英若硬脫歐 聯合國盤點全球最大贏家與輸家',
-            miniti: '財經新聞'
-        }, {
-            index: 7,
-            title: '大甲媽遶彰化警察被打傷 方仰寧嗆黑道「相堵ㄟ丟！」',
-            miniti: '八七新聞'
-        }, {
-            index: 8,
-            title: '神魔之塔x《聖鬥士星矢》合作確認 與雅典娜及眾多聖鬥士並肩作戰！',
-            miniti: '想不到新聞'
-        }, {
-            index: 9,
-            title: '關於史上首張黑洞照片，這些是你需要的科普資料',
-            miniti: '高雄新聞'
-        }, {
-            index: 10,
-            title: '慟!!!!中午不知道要吃什麼',
-            miniti: '台灣新聞'
-        }]
-    }
-    let vm = new Vue({
-        el: "#app",
-        data: data,
-        mounted: function() {
-            var mySwiper = new Swiper('.swiper-container', {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                on: {
-                    slideChangeTransitionStart: function() {
-                        $('.back').css('opacity', 0.5);
-                        $('.swiper-slide-active').find('.back').css('opacity', 0);
-                    }
-                },
-            })
 
-            var swiper2 = new Swiper('.select', {
-                width: 50,
-                spaceBetween: 0,
-                freeMode: true,
-                loop: false,
-                autoHeight: true,
-                navigation: {
-                    nextEl: '.select-next',
-                    prevEl: '.select-prev',
-                },
-            })
+<script src="./beeALL.js"></script>
 
-        }
-    })
-</script>
 
 </html>
