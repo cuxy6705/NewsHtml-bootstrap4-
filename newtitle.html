@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.css' />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css' />
     <link rel="stylesheet" href="../../dist/style/style.min.css">
     <title>Newspage</title>
 </head>
@@ -91,7 +92,7 @@
                         <div class="videonews">
                             <h2>影音新聞</h2>
                         </div>
-                        <div class="row">
+                        <div id="sortable" class="row">
                             <div class="newstitle" v-for="(item,index) in news">
                                 <div class="hide" v-if="item.index == 1"></div>
                                 <div class="playbox">
@@ -207,21 +208,20 @@
         </div>
 
         <div>
-            <div id="gotoTop" @click="goTop()"><i class="fas fa-chevron-up"></i></div>
+            <div id="gotoTop"><i class="fas fa-chevron-up"></i></div>
         </div>
 
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
 </body>
 
 <script src="./beeALL.js"></script>
-
 
 </html>

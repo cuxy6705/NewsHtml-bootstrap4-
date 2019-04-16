@@ -155,9 +155,9 @@ let vm = new Vue({
     el: "#app",
     data: data,
     methods: {
-        goTop() {
-            document.documentElement.scrollTop = 0;
-        },
+        // goTop() {
+        //     document.documentElement.scrollTop = 0;
+        // },
         // showTop() {
         //     this.scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
         //     if (this.scrollTop > 200) {
@@ -205,8 +205,12 @@ let vm = new Vue({
 
 
 $(document).ready(function() {
-    $(document).one('click', '#gotoTop', function(e) {
+    $(document).on('click', '#gotoTop', function(e) {
         $('html,body').animate({ scrollTop: 0 }, 'slow');
         return false;
     });
+
+
+    $("#sortable").sortable();
+    $("#sortable").disableSelection();
 });
