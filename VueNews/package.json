@@ -1,5 +1,5 @@
 {
-  "name": "vuenews",
+  "name": "news",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,15 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "emmet": "^1.6.3",
-    "html-format": "^1.0.1",
-    "vue": "^2.6.6",
-    "vue-router": "^3.0.1"
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.5.21"
   },
